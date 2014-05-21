@@ -1,8 +1,9 @@
-var http = require('htt');
+var http = require('http');
 
-var prot = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 http.createServer(function(req, res) {
-  res.send(200, "Welcome to theunusedpath.com");
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end("Welcome to theunusedpath.com");
 }).listen(port, function() {
   console.log('listening on port', port);
 });
